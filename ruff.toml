@@ -1,0 +1,14 @@
+line-length = 100
+target-version = "py312"
+exclude = ["upload", ".venv", "face_data", "__pycache__"]
+
+[lint]
+# E402: module-level import not at top of file (test files set sys.path first)
+# E501: line too long (handled by formatting, not a real defect)
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["E402", "E501", "E722"]
+
+[lint.per-file-ignores]
+"tests/*" = ["E402", "F401", "F811", "B011"]
+"**/tests/*" = ["E402", "F401", "F811", "B011"]
+"*/download/FaceFinderPRO/tests/*" = ["E402", "F401", "F811", "B011"]
