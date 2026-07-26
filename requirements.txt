@@ -1,0 +1,21 @@
+# FaceHunter PRO runtime dependencies.
+# Install with:  pip install -r requirements.txt
+# Then install the Playwright browser:  python -m playwright install chromium
+#
+# Note: insightface will pull onnxruntime and opencv-python-headless as
+# transitive dependencies. The app auto-installs missing packages on first
+# launch via streamlit run, but pinning here ensures reproducible builds.
+
+streamlit>=1.30
+pillow>=10.0
+numpy>=1.24
+requests>=2.31
+beautifulsoup4>=4.12
+insightface>=0.7.3
+onnxruntime>=1.16
+opencv-python-headless>=4.8
+playwright>=1.40
+
+# Test dependencies (optional, for the regression suite under tests/).
+pytest>=8.0
+ruff>=0.6
