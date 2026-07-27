@@ -1,4 +1,4 @@
-# FaceHunter PRO™
+# FaceHunter PRO
 
 Production-grade **reverse face-image search** with a local gallery, multi-engine
 stealth browser automation, embedding caching, and verified candidate matching.
@@ -315,3 +315,18 @@ Behavior guarantees:
   fallback), so nothing regresses.
 - Observability via in-process metrics: `concurrent_search_runs`,
   `engine_attempts`, `engine_success`, `engine_empty`, `engine_timeout`.
+
+## Skip the Playwright Chromium download (use system Chrome)
+
+The `playwright install chromium` step downloads a ~180 MB browser and does not
+resume on failure, so a flaky connection can stall it indefinitely. To avoid it
+entirely, point FaceHunter at a browser you already have installed:
+
+```bash
+export FACEHUNTER_BROWSER_CHANNEL=chrome   # uses system Google Chrome
+streamlit run FaceFinderPRO.py
+```
+
+Accepts `chrome`, `chrome-beta`, `msedge`, or `chromium`. If the requested
+channel is not installed, the app automatically falls back to Playwright's
+bundled Chromium (never a hard failure).
