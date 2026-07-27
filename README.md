@@ -1,4 +1,4 @@
-# FaceHunter PRO
+# FaceHunter PRO™
 
 Production-grade **reverse face-image search** with a local gallery, multi-engine
 stealth browser automation, embedding caching, and verified candidate matching.
